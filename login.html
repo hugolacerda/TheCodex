@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Howdy World</title>
+        
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/web.css">
+
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
+
+        <!-- Firebase + AngularFire -->
+        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+
+        <!-- Local JS's -->
+        <!-- <script src="assets/js/config.js"></script>
+         <script src="assets/js/ctrl/core.js"></script> -->
+
+        <!-- Mobile Friendly! -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin login">
+        <h2 class="form-signin-heading">Login To the Codex</h2>
+        <input type="text" class="form-control myEmail" placeholder="Email address" required autofocus>
+        <input type="password" class="form-control myPassword" placeholder="Password" required>
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script type="text/javascript">
+      var chatRef = new Firebase('https://codexdb.firebaseio.com');
+      var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+         if (error) {
+        // an error occurred while attempting login
+            console.log(error);
+          } else if (user) {
+            // user authenticated with Firebase
+            console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
+              
+          } else {
+            // user is logged out
+          }
+      });
+
+      $(".span").click(function(){
+
+        auth.createUser(email, password, function(error, user) {
+          if (!error) {
+            console.log('User Id: ' + user.id + ', Email: ' + user.email);
+          }
+        });
+
+
+      });
+
+      
+      $(".btn").click(function(){
+        var loginEmail = $(".myEmail").val();
+        var loginPassword = $(".myPassword").val();
+        console.log(loginEmail,loginPassword);
+         auth.login('password', {
+           email: loginEmail,
+           password: loginPassword
+         });
+
+         
+      });
+
+      // var myDataRef = new Firebase('https://hugolacerda-sms.firebaseio.com/');
+      //   $('#messageInput').keypress(function (e) {
+      //     if (e.keyCode == 13) {
+      //       var name = $('#nameInput').val();
+      //       var text = $('#messageInput').val();
+      //       myDataRef.push({name: name, text: text});
+      //       $('#messageInput').val('');
+      //     }
+      //   });
+    </script>
+
+  </body>
+</html>
