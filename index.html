@@ -1,7 +1,6 @@
-<html lang="en-US">
+<html lang="en-US" ng-app="myapp">
     <head>
         <title>The Codex</title>
-        
         <!-- Bootstrap CDN -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/web.css">
@@ -11,105 +10,45 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
 
         <!-- Firebase + AngularFire -->
+        
         <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+        <script type='text/javascript'
+          src='https://cdn.firebase.com/v0/firebase-simple-login.js'>
+        </script>
+
         <script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
 
+
         <!-- Local JS's -->
-        <!-- <script src="assets/js/config.js"></script>
-         <script src="assets/js/ctrl/core.js"></script> -->
+         <!-- <script type="text/javascript" src="js/FBURL.js"></script> -->
+        <script type="text/javascript" src="js/app.js"></script> 
+        <script type="text/javascript" src="js/ctrl/core.js"></script>
+        <script type="text/javascript" src="js/controllers/signincontroller.js"></script>
+        <script type="text/javascript" src="js/ctrl/config.js"></script>
+      
+          
 
         <!-- Mobile Friendly! -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
     </head>
         <body>
-            
-            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
-                  <div class="container">
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                      <a class="navbar-brand" href="#">The Codex</a>
-                    </div>
-                    <div class="navbar-collapse collapse">
-                      <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Username</a></li>
-                        <li><a href="#">Log Out</a></li>
-                      </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-
-       
-        <header class="container">
-
-                <h1 class="pull-left">My Projects</h1>
-                <a class="btn btn-primary btn-lg pull-right myButton" role="button">+ Add Project</a>
            
-        </header>
-       
-        <section class="container sub-nav">    
-                <ul class="nav nav-justified nav-pills">
-                  <li class="active"><a href="#">Fiction</a></li>
-                  <li><a href="#">Essays</a></li>
-                  <li><a href="#">Poetry</a></li>
-                </ul>   
-        </section>
+           <div ng-controller="CtrlCore">
+                        
+                        <!-- Partials are Injected Here -->
+                        <div ng-view ng-cloak></div>
 
-        <article class="container">
-            
-                <!-- <div class="list-group col-md-3">
-                  <h2><a href="#" class="list-group-item active">
-                    Story1
-                  </a></h2>
-                  <h3><a href="#" class="list-group-item">Story2</a></h3>
-                  <h3><a href="#" class="list-group-item">Story3</a></h3>
-                  <h3><a href="#" class="list-group-item">Story4</a></h3>
-                  <h3><a href="#" class="list-group-item">Story5</a></h3>
-                </div> -->
-               
-
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h2 class="list-group-item-heading">Story Title 1</h2>
-                        <p class="list-group-item-text lead">Story Description with Link</p>
-                    </a>
-                </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h2 class="list-group-item-heading">Story Title 2</h2>
-                        <p class="list-group-item-text lead">Story Description with Link</p>
-                    </a>
-                </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h2 class="list-group-item-heading">Story Title 3</h2>
-                        <p class="list-group-item-text lead">Story Description with Link</p>
-                    </a>
-                </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h2 class="list-group-item-heading">Story Title 4</h2>
-                        <p class="list-group-item-text lead">Story Description with Link</p>
-                    </a>
-                </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h2 class="list-group-item-heading">Story Title 5</h2>
-                        <p class="list-group-item-text lead">Story Description with Link</p>
-                    </a>
-                </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item active">
-                        <h2 class="list-group-item-heading">Story Title 6</h2>
-                        <p class="list-group-item-text lead">Story Description with Link</p>
-                    </a>
-                </div> 
-               
-        </article>
+            </div>
 
         </body>
 </html>

@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myapp">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,12 +14,24 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.min.js"></script>
 
         <!-- Firebase + AngularFire -->
+        
         <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+        <script type='text/javascript'
+          src='https://cdn.firebase.com/v0/firebase-simple-login.js'>
+        </script>
+
         <script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
 
+
         <!-- Local JS's -->
-        <!-- <script src="assets/js/config.js"></script>
-         <script src="assets/js/ctrl/core.js"></script> -->
+         <!-- <script type="text/javascript" src="js/FBURL.js"></script> -->
+        <script type="text/javascript" src="js/app.js"></script> 
+        
+        <script type="text/javascript" src="js/controllers/signincontroller.js"></script>
+        <script type="text/javascript" src="js/ctrl/config.js"></script>
+      
+          
 
         <!-- Mobile Friendly! -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -36,76 +47,12 @@
   </head>
 
   <body>
-
-    <div class="container">
-
-      <form class="form-signin login">
-        <h2 class="form-signin-heading">Login To the Codex</h2>
-        <input type="text" class="form-control myEmail" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control myPassword" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div> <!-- /container -->
-
+  <script type="text/javascript" src="partials/login.html"></script>
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
-    <script type="text/javascript">
-      var chatRef = new Firebase('https://codexdb.firebaseio.com');
-      var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
-         if (error) {
-        // an error occurred while attempting login
-            console.log(error);
-          } else if (user) {
-            // user authenticated with Firebase
-            console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
-              
-          } else {
-            // user is logged out
-          }
-      });
-
-      $(".span").click(function(){
-
-        auth.createUser(email, password, function(error, user) {
-          if (!error) {
-            console.log('User Id: ' + user.id + ', Email: ' + user.email);
-          }
-        });
-
-
-      });
-
-      
-      $(".btn").click(function(){
-        var loginEmail = $(".myEmail").val();
-        var loginPassword = $(".myPassword").val();
-        console.log(loginEmail,loginPassword);
-         auth.login('password', {
-           email: loginEmail,
-           password: loginPassword
-         });
-
-         
-      });
-
-      // var myDataRef = new Firebase('https://hugolacerda-sms.firebaseio.com/');
-      //   $('#messageInput').keypress(function (e) {
-      //     if (e.keyCode == 13) {
-      //       var name = $('#nameInput').val();
-      //       var text = $('#messageInput').val();
-      //       myDataRef.push({name: name, text: text});
-      //       $('#messageInput').val('');
-      //     }
-      //   });
-    </script>
 
   </body>
 </html>

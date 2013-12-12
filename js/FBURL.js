@@ -1,0 +1,1 @@
+myapp.module.value('FBURL', 'https://codexdb.firebaseio.com/')
