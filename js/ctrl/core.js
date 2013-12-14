@@ -17,29 +17,30 @@ myapp.controller('CtrlProjectDetail', ['$scope', '$routeParams', '$firebase', fu
 	
 	
 	
-
-	var projectWatch = $scope.$watch('projects', function() {
-		// check for a student id match
+	
+	// var projectWatch = $scope.$watch('projects', function() {
+	// 	// check for a student id match
 		
-		if($scope.matchprojectID({ id : $routeParams.id })){
-			projectWatch();
-		}
-	});
+	// 	if($scope.matchprojectID({ id : $routeParams.id })){
+	// 		projectWatch();
+	// 	}
+	// 	console.log(matchprojectID);
+	// });
 
-	$scope.matchprojectID = function (args) {
+	// $scope.matchprojectID = function (args) {
 
-		// Loop All students lookign for match
-		for(FBID in $scope.Projects){
-			var projects = $scope.Projects[FBID];
-			console.log(projects)
-			if( projects.id == args.id ) {
+	// 	// Loop All projects looking for a match
+	// 	for(FBID in $scope.projects){
+	// 		var projects = $scope.projects[FBID];
+	// 		console.log(FBID);
+	// 		if( projects.id == args.id ) {
 
-				//On match establish $scope.Student
-				$scope.Projects = projects;
-				return true;
-			}
-		}
-	}
+	// 			//On match establish $scope.Student
+	// 			$scope.projects = projects;
+	// 			return true;
+	// 		}
+	// 	}
+	// }
 
 
 }]);

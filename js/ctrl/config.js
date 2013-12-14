@@ -35,5 +35,15 @@
         controller:   'CtrlProjectDetail'
       })
 
+      .when('/signup',{
+      	templateUrl:  'partials/newUser.html',
+        controller:   'SignupCtrl'
+      })
+
+      .when('/addProject',{
+      	templateUrl:  'partials/newProject.html',
+        controller:   'CtrlProject'
+      })
+
 
   }]);

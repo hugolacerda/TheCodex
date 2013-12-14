@@ -42,10 +42,10 @@
     $scope.email = null;
     $scope.pass = $scope.auth.$login('password', $scope.loginFormInfo);
     $scope.err = null;
-         loginService.login($scope.email, $scope.pass, '/', function(err, user) {
-           $scope.err = err||null;
-           typeof(callback) === 'function' && callback(err, user);
-         });
+         // loginService.login($scope.email, $scope.pass, '/', function(err, user) {
+         //   $scope.err = err||null;
+         //   typeof(callback) === 'function' && callback(err, user);
+         // });
     
   
   }

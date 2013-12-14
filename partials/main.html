@@ -12,8 +12,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" ng-show="user">{{user}}</a></li> <!-- See Rachel About this ng-show get user to show -->
-            <li><a href="#">Log Out</a></li>
+            <li><a href="#" ng-show="auth.user">{{auth.user.email}}</a></li> <!-- See Rachel About this ng-show get user to show -->
+            <li><a href="#" ng-click="auth.$logout()">Log Out</a></li>
           </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -23,7 +23,7 @@
 <header class="container">
 
     <h1 class="pull-left">My Projects</h1>
-    <a class="btn btn-primary btn-lg pull-right myButton" role="button">+ Add Project</a>
+    <a class="btn btn-primary btn-lg pull-right myButton" role="button" ng-href="#/addProject">+ Add Project</a>
 
 </header>
 
@@ -35,8 +35,7 @@
     </ul>   
 </section>
 
-<article class="container">
-    
+<article class="container" ng-show="user.project">
     <!-- <div class="list-group col-md-3">
       <h2><a href="#" class="list-group-item active">
         Story1
@@ -48,41 +47,12 @@
     </div> -->
 
 
-    <div class="list-group">
-        <a href="#" class="list-group-item active">
-            <h2 class="list-group-item-heading">Story Title 1</h2>
-            <p class="list-group-item-text lead">Story Description with Link</p>
+    <div class="list-group" ng-repeat="project in project">
+        <a href="{{project.link}}" class="list-group-item active">
+            <h2 class="list-group-item-heading">{{project.name}}</h2>
+            <p class="list-group-item-text lead">{{project.genre}}</p>
         </a>
     </div>
-    <div class="list-group">
-        <a href="#" class="list-group-item active">
-            <h2 class="list-group-item-heading">Story Title 2</h2>
-            <p class="list-group-item-text lead">Story Description with Link</p>
-        </a>
-    </div>
-    <div class="list-group">
-        <a href="#" class="list-group-item active">
-            <h2 class="list-group-item-heading">Story Title 3</h2>
-            <p class="list-group-item-text lead">Story Description with Link</p>
-        </a>
-    </div>
-    <div class="list-group">
-        <a href="#" class="list-group-item active">
-            <h2 class="list-group-item-heading">Story Title 4</h2>
-            <p class="list-group-item-text lead">Story Description with Link</p>
-        </a>
-    </div>
-    <div class="list-group">
-        <a href="#" class="list-group-item active">
-            <h2 class="list-group-item-heading">Story Title 5</h2>
-            <p class="list-group-item-text lead">Story Description with Link</p>
-        </a>
-    </div>
-    <div class="list-group">
-        <a href="#" class="list-group-item active">
-            <h2 class="list-group-item-heading">Story Title 6</h2>
-            <p class="list-group-item-text lead">Story Description with Link</p>
-        </a>
-    </div> 
+    
        
 </article>

@@ -162,6 +162,7 @@ AngularFire.prototype = {
         self._onChange.push(callback);
         break;
       case "loaded":
+        console.log('loaded',callback);
         self._onLoaded.push(callback);
         break;
       default:
@@ -206,6 +207,7 @@ AngularFire.prototype = {
         throw new Error("Unexpected type from remote data " + typeof value);
       }
 
+      console.log('loaded first')
       // Call handlers for the "loaded" event.
       self._broadcastEvent("loaded", value);
     });
@@ -314,6 +316,7 @@ AngularFire.prototype = {
       break;
     case "loaded":
       cbs = this._onLoaded;
+      console.log('cbs',cbs);
       break;
     default:
       cbs = [];
@@ -322,6 +325,7 @@ AngularFire.prototype = {
     if (cbs.length > 0) {
       for (var i = 0; i < cbs.length; i++) {
         if (typeof cbs[i] == "function") {
+          cosole.log(cbs);
           cbs[i](param);
         }
       }

@@ -2,6 +2,7 @@ var myapp = angular.module("myapp",
 	["firebase" 
 	,'ngRoute']);
 
+var userId;
 
 myapp.run(['$rootScope', '$firebaseAuth', '$firebase', function($rootScope, $firebaseAuth, $firebase){
   var ref = new Firebase("http://codexdb.firebaseio.com");
@@ -9,24 +10,15 @@ myapp.run(['$rootScope', '$firebaseAuth', '$firebase', function($rootScope, $fir
 
   $rootScope.$on("$firebaseAuth:login", function(error, user){
     console.log("User " + user.id + " successfully logged in!");
-
-    $rootScope.user = $firebase(new Firebase('https://codexdb.firebaseio.com/users'+ user.id ));
-
-    $rootScope.user.$on("loaded", function(userLoaded){
-      console.log("Initial data received!");
-      console.log("user", userLoaded);
-
-      if(user === null)
-      {
-        var newUser = {
-            name: user.name,
-            gender: user.gender,
-            user_type: 'user'
-        }
-          $rootScope.user.$set(newUser);
-      }
-
-    });
+    userId = user.id;
+    $rootScope.user = $firebase(new Firebase('http://codexdb.firebaseio.com/users/'+ user.id ));
+  
+    var newUser = {
+        name: user.email,
+        user_type: 'hello'
+    }
+    $rootScope.user.$set(newUser);
+      
   })
 
 
@@ -34,6 +26,8 @@ myapp.run(['$rootScope', '$firebaseAuth', '$firebase', function($rootScope, $fir
   $rootScope.$on("$firebaseAuth:error", function(error){console.log("ERROR!! ",error)});
 
  }])
+
+
 
 // myapp.controller('loginController', ['$rootScope', '$scope', function($rootScope, $scope){
 //   $scope.signup = function()
