@@ -35,19 +35,9 @@
     </ul>   
 </section>
 
-<article class="container" ng-show="user.project">
-    <!-- <div class="list-group col-md-3">
-      <h2><a href="#" class="list-group-item active">
-        Story1
-      </a></h2>
-      <h3><a href="#" class="list-group-item">Story2</a></h3>
-      <h3><a href="#" class="list-group-item">Story3</a></h3>
-      <h3><a href="#" class="list-group-item">Story4</a></h3>
-      <h3><a href="#" class="list-group-item">Story5</a></h3>
-    </div> -->
+<article class="container">
 
-
-    <div class="list-group" ng-repeat="project in project">
+    <div class="list-group" ng-repeat="project in projects">
         <a href="{{project.link}}" class="list-group-item active">
             <h2 class="list-group-item-heading">{{project.name}}</h2>
             <p class="list-group-item-text lead">{{project.genre}}</p>
