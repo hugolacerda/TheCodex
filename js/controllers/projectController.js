@@ -10,8 +10,10 @@ myapp.controller('CtrlProject', ['$rootScope', '$scope', '$routeParams', '$fireb
 	}
 
 	$scope.editProject = function(){
+		
 		var url = $location.path();
 		var id = url.substring(url.lastIndexOf('/') + 1);
+		console.log(id);
 		$scope.projects = $firebase(new Firebase('http://codexdb.firebaseio.com/users/'+ $rootScope.user.id + '/projects/' + id));
 		console.log("this is arg: ", $scope.projects);
 		
