@@ -2,14 +2,43 @@ body{
 	padding-top: 0px !important;
 }
 
+.myTitle{
+  color: #C0C0C0;
+}
+
+.navbar{
+  margin-bottom: 0px !important;
+}
+
+#bgHead{
+
+  margin-bottom: 30px;
+  width: 100%;
+background: rgb(45,47,51); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(45,47,51,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(45,47,51,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(45,47,51,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(45,47,51,1) 0%,rgba(0,0,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(45,47,51,1) 0%,rgba(0,0,0,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(45,47,51,1) 0%,rgba(0,0,0,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d2f33', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+
+}
+
 .panel{
 	padding-bottom: 10px !important;
 }
 
 body {
-  padding-top: 40px;
+ /* padding-top: 40px;*/
   padding-bottom: 40px;
   background-color: #eee;
+  background-image: url("../img/merely_cubed.png");
+
+}
+
+.nav-pills a{
+  border-radius: 0px !important;
 }
 
 .form-signin {
@@ -54,4 +83,20 @@ body {
 
 .myButton{
 	margin-top: 15px;
+}
+
+.list-group-item{
+  border-color: transparent;
+}
+
+.myBtn{
+  padding:30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.list-group{
+  background-color: #fff;
+  border: 1px solid #ddd;
+
 }

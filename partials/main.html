@@ -10,39 +10,49 @@
           </button>
           <a class="navbar-brand" href="#">The Codex</a>
         </div>
-        <div class="navbar-collapse collapse">
+       
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#" ng-show="auth.user">{{auth.user.email}}</a></li> <!-- See Rachel About this ng-show get user to show -->
             <li><a href="#" ng-click="auth.$logout()">Log Out</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+       
     </div>
 </div>
 
+<div id="bgHead">
 
 <header class="container">
 
-    <h1 class="pull-left">My Projects</h1>
+    <h3 class="pull-left myTitle">My Projects</h3>
     <a class="btn btn-primary btn-lg pull-right myButton" role="button" ng-href="#/addProject">+ Add Project</a>
 
 </header>
 
+
+
 <section class="container sub-nav">    
     <ul class="nav nav-justified nav-pills">
-      <li class="active"><a href="#">Fiction</a></li>
-      <li><a href="#">Essays</a></li>
-      <li><a href="#">Poetry</a></li>
+      <li ng-class="fictionActive"><a href="" ng-click="setActive('fiction')">Fiction</a></li>
+      <li ng-class="essaysActive"><a href="" ng-click="setActive('essays')">Essays</a></li>
+      <li ng-class="poetryActive"><a href="" ng-click="setActive('poetry')">Poetry</a></li>
     </ul>   
 </section>
 
+</div>
+
 <article class="container">
 
-    <div class="list-group" ng-repeat="project in projects">
-        <a href="{{project.link}}" class="list-group-item active">
-            <h2 class="list-group-item-heading">{{project.name}}</h2>
-            <p class="list-group-item-text lead">{{project.genre}}</p>
-        </a>
+    <div class="list-group row" ng-repeat="(id,project) in projects | toArray | filter:genreFilter">
+            <div class="col-sm-8">
+              <a href="{{project.link}}" class="list-group-item">
+              <h2 class="list-group-item-heading">{{project.name}}</h2>
+              <p class="list-group-item-text lead">{{project.genre}}</p>
+              </a>
+            </div>
+        <a class="col-sm-4 btn btn-success myBtn" href="#/project/{{id}}">Edit</a>
+
     </div>
-    
-       
+
+   
+      
 </article>

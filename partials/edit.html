@@ -1,0 +1,21 @@
+<div class="container">
+
+  <form class="form-signin login">
+    <h2 class="form-signin-heading">New Project</h2>
+    <input type="text" class="form-control myEmail" placeholder="Project Name" ng-model="ProjectInfoEdit.name" required autofocus>
+    <div class="form-group">
+      <label for="genre">Project Genre</label>
+      <select class="form-control" required autofocus ng-model="ProjectInfoEdit.genre">
+        <option>Fiction</option>
+        <option>Essays</option>
+        <option>Poetry</option>
+      </select>
+    </div>
+    <input type="text" class="form-control myEmail" placeholder="Document Url" ng-model="ProjectInfoEdit.link" required autofocus>
+    <div class="row"> 
+      <button class="btn btn-lg btn-primary col-md-6" type="submit" ng-click="editProject()">Add Project</button>  
+  </form>
+    <a href="#" class="btn btn-lg btn-danger col-md-6" ng-click="deleteProject()">Delete Project</a>
+   </div>
+   <!-- <p ng-show="err" class="error">{{err}}</p> -->
+</div> <!-- /container -->

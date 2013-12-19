@@ -30,6 +30,12 @@
         authRequired: true
       })
 
+       .when('/project/:id',{
+        templateUrl:  'partials/edit.html',
+        controller:   'CtrlProject',
+        authRequired: true
+      })
+
       .otherwise('/', {
         templateUrl:  'partials/login.html',
         controller:   'SigninCtrl',
