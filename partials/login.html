@@ -1,16 +1,19 @@
 <div class="container" data-ng-controller="SigninCtrl">
 
   <form class="form-signin login">
-    <h2 class="form-signin-heading">Login To the Codex</h2>
-    <input type="text" class="form-control myEmail" placeholder="Email address" ng-model="loginFormInfo.email" required autofocus>
-    <input type="password" class="form-control myPassword" placeholder="Password" ng-model="loginFormInfo.password" required>
-    <label class="checkbox">
-      <input type="checkbox" value="remember-me"> Remember me
-      <a class="pull-right" ng-href="#/signup">New User</a>
-    </label>
+    <div class="myform">
+      <h2 class="form-signin-heading text-center">Login To</h2></br>
+      <img src="img/codex_logo.png" />
+      <input type="text" class="form-control myEmail" placeholder="Email address" ng-model="loginFormInfo.email" required autofocus>
+      <input type="password" class="form-control myPassword" placeholder="Password" ng-model="loginFormInfo.password" required>
+      <label class="checkbox">
+<!--         <input type="checkbox" value="remember-me" class="hidden"> New User? -->
+        <a class="pull-right btn-lg btn-success signUp" ng-href="#/signup">Sign Up</a>
+      </label>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Sign in</button>
-
+      <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Login</button>
+    </div>
   </form>
    <!-- <p ng-show="err" class="error">{{err}}</p> -->
+
 </div> <!-- /container -->

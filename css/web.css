@@ -2,6 +2,14 @@ body{
 	padding-top: 0px !important;
 }
 
+.myBrand{
+  width: 200px !important;
+  text-indent: -2000px;
+  background-image: url("../img/codex_logo_main.png");
+  background-repeat: no-repeat;
+  margin-top: 10px;
+}
+
 .myTitle{
   color: #C0C0C0;
 }
@@ -42,7 +50,7 @@ body {
 }
 
 .form-signin {
-  max-width: 330px;
+  max-width: 400px;
   padding: 15px;
   margin: 0 auto;
 }
@@ -89,6 +97,10 @@ body {
   border-color: transparent;
 }
 
+.signUp{
+  margin-bottom: 15px !important;
+}
+
 .myBtn{
   padding:30px;
   font-size: 30px;
@@ -99,4 +111,16 @@ body {
   background-color: #fff;
   border: 1px solid #ddd;
 
+}
+
+.myform{
+  width: 400px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.myform img{
+  margin-left: 5px;
+  margin-bottom: 10px;
 }
