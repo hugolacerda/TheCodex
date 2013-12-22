@@ -1,21 +1,29 @@
 <div class="container">
 
+
   <form class="form-signin login">
-    <h2 class="form-signin-heading">New Project</h2>
-    <input type="text" class="form-control myEmail" placeholder="Project Name" ng-model="ProjectInfoEdit.name" required autofocus>
+    <div class="myform">
+  <p class="lead">* You Must Fill Out all Feilds to properly Edit the Project</p>
+   
+    <h2 class="form-signin-heading">Edit This Project</h2>
+    <input type="text" class="form-control myEmail" placeholder="Retype Project Name" ng-model="ProjectInfoEdit.name" required autofocus>
     <div class="form-group">
-      <label for="genre">Project Genre</label>
-      <select class="form-control" required autofocus ng-model="ProjectInfoEdit.genre" required>
+    <div class="row myButton">
+      <label for="genre" class="col-md-7">Reselect Project Genre:</label>
+      <select class="form-control mySelect col-md-5" ng-model="ProjectInfoEdit.genre" required>
         <option>Fiction</option>
         <option>Essays</option>
         <option>Poetry</option>
       </select>
     </div>
-    <input type="text" class="form-control myEmail" placeholder="Document Url" required="true" ng-model="ProjectInfoEdit.link" required autofocus>
-    <div class="row"> 
-      <button class="btn btn-lg btn-primary col-md-6" type="submit" ng-click="editProject()">Save Project</button>  
+    </div>
+    <input type="text" class="form-control myEmail" placeholder="Re-enter Document Url" ng-model="ProjectInfoEdit.link" required>
+    <div class="row myRow"> 
+      <button class="btn btn-primary col-md-4 mySave" type="submit" ng-click="editProject()">Save Project</button>  
+    
   </form>
-    <a href="#" class="btn btn-lg btn-danger col-md-6" type="submit" ng-click="deleteProject()">Delete Project</a>
+    <a href="#" class="btn btn-danger col-md-4 col-md-offset-3" type="submit" ng-click="deleteProject()">Delete Project</a>
+   </div>
    </div>
    <!-- <p ng-show="err" class="error">{{err}}</p> -->
 </div> <!-- /container -->

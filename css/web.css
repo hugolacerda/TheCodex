@@ -2,6 +2,14 @@ body{
 	padding-top: 0px !important;
 }
 
+.myRow{
+  margin-top: 15px;
+}
+
+.mySave{
+  margin-left: 15px;
+}
+
 .myBrand{
   width: 200px !important;
   text-indent: -2000px;
@@ -16,6 +24,10 @@ body{
 
 .navbar{
   margin-bottom: 0px !important;
+}
+
+.mySelect{
+  width: 130px;
 }
 
 #bgHead{
